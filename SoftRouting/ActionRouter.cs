@@ -77,5 +77,7 @@ namespace SoftRouting {
         public IActionRouter MapIndexPage(string actionName) {
             return this.MapFullRoute(actionName, string.Empty);
         }
+
+        
     }
 }

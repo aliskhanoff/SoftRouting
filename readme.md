@@ -1,16 +1,16 @@
 
-# THE SOFT ROUTING PROJECT V.01
+# Soft Routing for ASP.NET MVC (0.1)
 
-### SoftRouting for Asp.Net MVC | SoftRouting для Asp.Net MVC
+## Getting Started 
 
-## Getting Started | Начните использовать
+> nuget install softrouting
 
-## Why Soft Routing? | Почему SoftRouting?
+## Why Soft Routing?
 
 * Easy Development | Простота разработки 
 * Understandable API | Понятный API
 
-Area Main | Область Main 
+Area Main  
 
 // Areas
         //Main
@@ -42,21 +42,22 @@ public class HomeController: Controller {
 
 ```
 RouteTable.Routes
-            .MapArea("Main")
+            .InArea("Main")
             .WithController("Home")
             .MapIndexPage("index"); // index => action name
 
             //will map to index page | Будет перенаправлен главную страницу
 ```
 
-### Routing Automatic || Автоматическая маршрутизация
+### AutoRouting
 
 ```
 RouteTable.Routes
-            .MapArea("Main")
+            .InArea("Main")
             .WithController("Home")
             .AutoMap();
             
 ```
 
-
+> READ DOCS
+https://github.com/aliskhanoff/SoftRouting/wiki
