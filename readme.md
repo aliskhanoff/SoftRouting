@@ -1,15 +1,14 @@
 
-#THE SOFT ROUTING V.01
+# THE SOFT ROUTING V.01
 
-##SoftRouting for Asp.Net MVC | SoftRouting для Asp.Net MVC
+## SoftRouting for Asp.Net MVC | SoftRouting для Asp.Net MVC
 
-#Getting Started | Начните использовать
+# Getting Started | Начните использовать
 
 ## Why Soft Routing? | Почему SoftRouting?
 
-* Speed of Development | Скорость разработки
-* Simple Coding | Простота кодинга 
-* Undestendible API | Понятный API
+* Easy Development | Простота разработки 
+* Understandable API | Понятный API
 
 Area Main | Область Main 
 
@@ -50,11 +49,19 @@ RouteTable.Routes
             //will map to index page | Будет перенаправлен главную страницу
 ```
 
-### Routing Automatic
+### Routing Automatic || Автоматическая маршрутизация
 
 ```
 RouteTable.Routes
             .MapArea("Main")
             .WithController("Home")
+            .AutoMap();
             
 ```
+
+
+### Routing 
+
+
+
+
