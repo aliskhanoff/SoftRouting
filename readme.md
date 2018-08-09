@@ -1,9 +1,9 @@
 
-# THE SOFT ROUTING V.01
+# THE SOFT ROUTING PROJECT V.01
 
-## SoftRouting for Asp.Net MVC | SoftRouting для Asp.Net MVC
+### SoftRouting for Asp.Net MVC | SoftRouting для Asp.Net MVC
 
-# Getting Started | Начните использовать
+## Getting Started | Начните использовать
 
 ## Why Soft Routing? | Почему SoftRouting?
 
@@ -58,10 +58,5 @@ RouteTable.Routes
             .AutoMap();
             
 ```
-
-
-### Routing 
-
-
 
 
