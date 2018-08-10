@@ -12,7 +12,7 @@
 
 ## EXAMPLES
 
-> Standart Asp.net MVC application:
+> Standart Asp.net MVC application Controller in Controllers folder:
 
 ```
 public class HomeController: Controller {
@@ -48,7 +48,7 @@ RouteTable.Routes.MapRoute(null, "", new {
 > Routing with SoftRouting Wrapper:
 
 ```
-RouteTable.Routes.MapIndexPage("index"); //action name "index" as default page
+RouteTable.Routes.InController("Home").MapIndexPage("index"); //action name "index" as default page
 ```
 
 > Routing to actions "about" && "contacts" with Asp.Net routing 
@@ -75,7 +75,7 @@ RouteTable.Routes.MapRoute(null, "{action}", new {
 ```
 > Routing with SoftRouting Wrapper:
 ```
-RouteTable.Routes.InController("Main")
+RouteTable.Routes.InController("Home")
                         .Map("about")
                         .Map("contacts");
 ```
@@ -83,20 +83,20 @@ RouteTable.Routes.InController("Main")
 > Or Automatic routing
 
 ```
-RouteTable.Routes.InController("Main").AutoMap();
+RouteTable.Routes.InController("Home").AutoMap();
 ```
 
 > Auto routing with url prefix
 
 ```
-RouteTable.Routes.InController("Main").AutoMap("blogs");
+RouteTable.Routes.InController("Home").AutoMap("blogs");
 ```
 
 > Also you can use url expressions:
 
 ```
 
-RouteTable.Routes.InController("Main")
+RouteTable.Routes.InController("Home")
                         .Map("about", "us/about")
                         .Map("contacts", "us/contacts");
 
@@ -121,9 +121,9 @@ RouteTable.Routes.InArea("Main").WithController("Home")
 
 ```
 
-RouteTable.Routes.InController("Main").AutoMap("us").SwitchArea("accounts").WithController("Login").AutoMap();
+RouteTable.Routes.InController("Home").AutoMap("us").SwitchArea("accounts").WithController("Login").AutoMap();
 
-RouteTable.Routes.InController("Main").AutoMap("us").SwitchController("Login").AutoMap();
+RouteTable.Routes.InController("Home").AutoMap("us").SwitchController("Login").AutoMap();
 
 ```
 
