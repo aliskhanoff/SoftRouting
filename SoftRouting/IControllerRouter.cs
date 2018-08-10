@@ -6,7 +6,7 @@ namespace SoftRouting {
     /// <summary>
     /// Interface of controller mappings
     /// </summary>
-    public interface IControllerRouter: IActionRouter {
+    public interface IControllerRouter: IRouter {
 
         
 

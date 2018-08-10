@@ -78,6 +78,14 @@ namespace SoftRouting {
             return this.MapFullRoute(actionName, string.Empty);
         }
 
-        
+        public IAreaRouter SwithArea(string areaName) {
+            return new AreaRouter(areaName);
+        }
+
+        public IControllerRouter SwithController(string controllerName) {
+            return new ControllerRouter(controllerName, areaName);
+        }
+
+
     }
 }

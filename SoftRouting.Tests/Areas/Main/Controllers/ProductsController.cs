@@ -7,6 +7,9 @@ namespace SoftRouting.Tests.Areas.Main.Controllers {
 
     public class ProductsController: Controller {
 
+
+
+        [HttpGet]
         public ActionResult  GetProduct(uint id) {
 
             return Content("this is product: " + id);

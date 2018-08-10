@@ -1,6 +1,7 @@
 ﻿///created by 0xBADC0DED aka Ramazan
 /// 9.08.2018
 
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace SoftRouting {
@@ -23,6 +24,18 @@ namespace SoftRouting {
         public static IControllerRouter WithController(this RouteCollection routes, string controllerName) {
             return new ControllerRouter(controllerName);
         }
+
+        /// <summary>
+        /// Extention method for AreaRegistrationContext class
+        /// </summary>
+        /// <param name="context">AreaRegistration context</param>
+        /// <param name="controllerName">Name of controller</param>
+        /// <returns>IControllerRouter interface</returns>
+        public static IControllerRouter WithController(this AreaRegistrationContext context, string controllerName) {
+            return new ControllerRouter(controllerName, context.AreaName);
+        }
+
+
         
 
     }

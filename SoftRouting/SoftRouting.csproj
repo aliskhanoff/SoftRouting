@@ -50,8 +50,11 @@
     <Compile Include="ControllerRouter.cs" />
     <Compile Include="DataTokens.cs" />
     <Compile Include="IActionRouter.cs" />
+    <Compile Include="IRouter.cs" />
     <Compile Include="IAreaRouter.cs" />
+    <Compile Include="IAreaSwitcher.cs" />
     <Compile Include="IControllerRouter.cs" />
+    <Compile Include="IControllerSwitcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoftRouteExtentions.cs" />
   </ItemGroup>

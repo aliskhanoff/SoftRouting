@@ -1,21 +1,17 @@
 
-# Soft Routing for ASP.NET MVC (0.1)
+# SoftRouting for ASP.NET MVC (0.1.2)
 
 ## Getting Started 
 
-> nuget install softrouting
+> nuget Install-Package softrouting
 
 ## Why Soft Routing?
 
-* Easy Development | Простота разработки 
-* Understandable API | Понятный API
+* Easy Development 
+* LightWeight routes
 
-Area Main  
+> Standart Asp.net MVC application:
 
-// Areas
-        //Main
-            //Controllers
-                //HomeController
 ```
 public class HomeController: Controller {
 
@@ -35,29 +31,86 @@ public class HomeController: Controller {
             return Content("contacts");
         }
 }
+```
+
+> Routing to index page with standart Asp.Net routing (action index):
+
+```
+RouteTable.Routes.MapRoute(null, "", new { 
+    controller: "Home",
+    action: "index"
+ });
 
 ```
 
-### Routing to this controller with default page
+> Routing with SoftRouting Wrapper:
 
 ```
-RouteTable.Routes
-            .InArea("Main")
-            .WithController("Home")
-            .MapIndexPage("index"); // index => action name
-
-            //will map to index page | Будет перенаправлен главную страницу
+RouteTable.Routes.MapIndexPage("index"); //action name "index" as default page
 ```
 
-### AutoRouting
+> Routing to actions "about" && "contacts" with Asp.Net routing 
 
 ```
-RouteTable.Routes
-            .InArea("Main")
-            .WithController("Home")
-            .AutoMap();
-            
+RouteTable.Routes.MapRoute(null, "about", new { 
+    controller: "Home",
+    action: "about"
+ });
+
+RouteTable.Routes.MapRoute(null, "contacts", new { 
+    controller: "Home",
+    action: "contacts"
+ });
+
+```
+> Or you can use automatic routing: 
+
+```
+RouteTable.Routes.MapRoute(null, "{action}", new { 
+    controller: "Home"
+ });
+
+```
+> Routing with SoftRouting Wrapper:
+```
+RouteTable.Routes.InController("Main")
+                        .Map("about")
+                        .Map("contacts");
 ```
 
-> READ DOCS
-https://github.com/aliskhanoff/SoftRouting/wiki
+> Also you can use url expressions:
+
+```
+
+RouteTable.Routes.InController("Main")
+                        .Map("about", "us/about")
+                        .Map("contacts", "us/contacts");
+
+```
+
+> And you can use prefix for route:
+
+```
+RouteTable.Routes.InController("Main").AutoMap("us"); 
+```
+
+> You can create routes in areas
+
+```
+
+RouteTable.Routes.InArea("Main").WithController("Home")
+                        .Map("about", "us/about")
+                        .Map("contacts", "us/contacts");
+
+```
+> You can swith controller and area
+
+```
+
+RouteTable.Routes.InController("Main").AutoMap("us").SwitchArea("accounts").WithController("Login").AutoMap();
+
+RouteTable.Routes.InController("Main").AutoMap("us").SwitchController("Login").AutoMap();
+
+```
+
+> Thanks for installation!

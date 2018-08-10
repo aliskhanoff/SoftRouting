@@ -83,12 +83,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Accounts\Controllers\LoginController.cs" />
     <Compile Include="Areas\Main\Controllers\HomeController.cs" />
     <Compile Include="Areas\Main\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Main\MainAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\TestAreaActionRouting.cs" />
+    <Compile Include="Tests\TestAreaRegistrationContextRouting.cs" />
+    <Compile Include="Tests\TestSwitchers.cs" />
     <Compile Include="Tests\TestControllerRouting.cs" />
     <Compile Include="Tests\TestSoftRoutingExtention.cs" />
   </ItemGroup>
