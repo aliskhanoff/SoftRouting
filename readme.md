@@ -78,6 +78,18 @@ RouteTable.Routes.InController("Main")
                         .Map("contacts");
 ```
 
+> Or Automatic routing
+
+```
+RouteTable.Routes.InController("Main").AutoMap();
+```
+
+> Auto routing with url prefix
+
+```
+RouteTable.Routes.InController("Main").AutoMap("blogs");
+```
+
 > Also you can use url expressions:
 
 ```
