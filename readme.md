@@ -10,6 +10,8 @@
 * Easy Development 
 * LightWeight routes
 
+## EXAMPLES
+
 > Standart Asp.net MVC application:
 
 ```
