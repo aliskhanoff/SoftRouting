@@ -37,10 +37,10 @@ public class HomeController: Controller {
         }
 }
 ```
-> Routing to index page with standart Asp.Net routing (action index):
-```
-using SoftRouting; //very important ¯\_(ツ)_/¯ 
 
+> Routing to index page with standart Asp.Net routing (action index):
+
+```
 RouteTable.Routes.MapRoute(null, "", new { 
     controller: "Home",
     action: "index"
@@ -51,6 +51,8 @@ RouteTable.Routes.MapRoute(null, "", new {
 > Routing with SoftRouting:
 
 ```
+using SoftRouting; //very important ¯\_(ツ)_/¯ 
+
 RouteTable.Routes.InController("Home").MapIndexPage("index"); //action name "index" as default page
 ```
 
