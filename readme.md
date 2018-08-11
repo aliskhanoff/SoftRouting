@@ -3,14 +3,17 @@
 
 ## Getting Started 
 
-> nuget Install-Package softrouting
+> nuget Install-Package softrouting -Version 0.1.2
 
-## Why Soft Routing?
+## Why SoftRouting?
 
-* Easy Development 
-* LightWeight routes
+* Ease of development
+* Clear code
+* Simple routes
 
-## EXAMPLES
+# EXAMPLES
+
+# Example 1
 
 > Standart Asp.net MVC application Controller in Controllers folder:
 
@@ -34,10 +37,10 @@ public class HomeController: Controller {
         }
 }
 ```
-
 > Routing to index page with standart Asp.Net routing (action index):
-
 ```
+using SoftRouting; //very important ¯\_(ツ)_/¯ 
+
 RouteTable.Routes.MapRoute(null, "", new { 
     controller: "Home",
     action: "index"
@@ -45,7 +48,7 @@ RouteTable.Routes.MapRoute(null, "", new {
 
 ```
 
-> Routing with SoftRouting Wrapper:
+> Routing with SoftRouting:
 
 ```
 RouteTable.Routes.InController("Home").MapIndexPage("index"); //action name "index" as default page
@@ -73,26 +76,26 @@ RouteTable.Routes.MapRoute(null, "{action}", new {
  });
 
 ```
-> Routing with SoftRouting Wrapper:
+> Routing with SoftRouting:
 ```
 RouteTable.Routes.InController("Home")
                         .Map("about")
                         .Map("contacts");
 ```
 
-> Or Automatic routing
+> Or you can use automatic routing
 
 ```
-RouteTable.Routes.InController("Home").AutoMap();
+RouteTable.Routes.InController("Home").AutoMap(); //will map to ~/index, ~/about, ~/contacts
 ```
 
-> Auto routing with url prefix
+> Auto routing with UrlPrefix
 
 ```
-RouteTable.Routes.InController("Home").AutoMap("blogs");
+RouteTable.Routes.InController("Home").AutoMap("blogs"); //will map to ~/blogs/about, ~/blogs/contacts
 ```
 
-> Also you can use url expressions:
+> Also you can use url expressions in map:
 
 ```
 
@@ -101,6 +104,8 @@ RouteTable.Routes.InController("Home")
                         .Map("contacts", "us/contacts");
 
 ```
+
+
 
 > And you can use prefix for route:
 
@@ -117,7 +122,7 @@ RouteTable.Routes.InArea("Main").WithController("Home")
                         .Map("contacts", "us/contacts");
 
 ```
-> You can swith controller and area
+> You can switсh controller and area
 
 ```
 
@@ -127,4 +132,46 @@ RouteTable.Routes.InController("Home").AutoMap("us").SwitchController("Login").A
 
 ```
 
-> Thanks for installation!
+# Example 2
+
+> Routing in AreaRegistration class
+
+```
+using SoftRouting; ¯\_(ツ)_/¯
+
+public class MainAreaRegistration : AreaRegistration  {
+
+        public override string AreaName => "Main";
+
+        public override void RegisterArea(AreaRegistrationContext context)  {
+        
+                context.WithController("Home")
+                            .AutoMap();
+        }
+}
+
+```
+
+> You can switch controllers
+
+```
+context.WithController("Home")
+                            .AutoMap()
+                                .SwitchController("Info")
+                                        .AutoMap("info");
+```
+
+> And you can switch Area
+
+
+```            context.WithController("Home")
+                    .AutoMap()
+                    .SwithArea("Account")
+                        .WithController("Login")
+                            .AutoMap("accounts"); //~/accounts/login, ~/accounts/register etc...
+```
+
+
+>  # Thanks for installation!
+
+## [Looking for a job](https://www.facebook.com/badcoded) - Visit my page
