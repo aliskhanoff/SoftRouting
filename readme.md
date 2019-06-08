@@ -176,4 +176,4 @@ context.WithController("Home")
 
 >  # Thanks for installation!
 
-## [Looking for a job](https://www.facebook.com/badcoded) - Visit my page
+## Looking for a job  [Visit my page](https://www.linkedin.com/in/ibnkhaleed)
